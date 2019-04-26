@@ -20,7 +20,7 @@ def is_word_guessed(secret_word, letters_guessed):
     return False
 
 def is_given_guess_correct(guessed_letter, secret_word):
-    """Returns boolian if correct"""
+    """Returns boolian if the guessed letter is correct"""
     if guessed_letter in secret_word:
         return True
     else:
@@ -34,16 +34,6 @@ def get_guessed_word(secret_word, letters_guessed):
     else:
         word += "_"
     return word
-
-def get_available_letters(letters_guessed):
-    alpha = list("abcdefghijklmnopqrstuvwxyz")
-    for letter in letters_guessed: #starts a for loop
-        alpha.remove(letter) #removes chosen letter from alpha list
-    return alpha
-
-def user_input (prompt):
-    user_input = input(prompt)
-    return user_input
 
 def spaceman(secret_word):
     """Runs Program and calls all the other functions"""
