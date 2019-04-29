@@ -1,5 +1,3 @@
-
-
 def life(count, secret_word):
     """Gives life count after guess"""
     if count == 7:
@@ -49,3 +47,19 @@ def life(count, secret_word):
         print("*********")
         print("AIRLOCK ACTIVATED! YOU LOSE")
         print(" NooooOOoOooOo00oooo!!!\n The passcode was {}".format(secret_word))
+
+text = [
+    "Welcome to the Spaceman's Airlock",
+    "I come in peace, GET ME OUT OF THIS AIRLOCK!",
+    "Please Help me hack the passcode, by guessing the letters:",
+    "The passcode has {} charictors ",
+    "You have 7 guesses before the airlock automatically opens.",
+    "Guess a Letter HotShot ",
+    "So far, you have guessed:{}",
+    "Revealed Password: {}",
+    "Correct!",
+    "Airlock Countdown: {}",
+    "incorrect",
+    "AIRLOCK ACTIVATED. NooooOOoOooOo00oooo!!! The passcode was {}",
+    "Im in!! Thank you human! Take me to your leader!"
+]
