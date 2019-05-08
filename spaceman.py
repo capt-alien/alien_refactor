@@ -2,36 +2,38 @@ import random
 from strings import life, text
 
 def load_word():
-    """Loads random word from text file"""
+    """load random word from text file"""
     f = open('words.txt', 'r')
     words_list = f.readlines()
     f.close() #Closes file
-##creates a secrete word object from the wordslist
+##creates a secret word object from the wordslist
     words_list = words_list[0].split(' ')
     secret_word = random.choice(words_list)
     return secret_word
-    print(load_word()) #Test the load_word function by printing it
 
 def is_word_guessed(secret_word, letters_guessed):
-    """Determines if a letter guesed is in password"""
+    """Determine if a letter guesed is in password"""
     for l in secret_word:
         if l not in letters_guessed:  #Cannot use not (!=) Because it is searching for each letter in the word
             return True
     return False
 
 def guess_correct(guessed_letter, secret_word):
-    """Returns boolian if the guessed letter is correct"""
+    """Return a boolian if the guessed letter is correct"""
     if guessed_letter in secret_word:
         return True
     else:
         return False
 
 def g_word(secret_word, letters_guessed):
-    """returns word if letters are all guessed"""
-    word = ""  #Declare a variable with an empty string
-    for letter in secret_word:  #Starts a for loop for letters g_word
+    """Return word if all letters are guessed"""
+    #Declare a variable with an empty string
+    word = ""
+      #Starts a for loop for letters g_word
+    for letter in secret_word:
         if letter in letters_guessed:
-            word += letter + ""  # Could I rewrite this with .append?
+            word += letter + ""
+    # IF not then return a blank charictor
     else:
         word += "_"
     return word
@@ -42,7 +44,7 @@ def spaceman(secret_word):
     count = 8
     for x in range(4):
         print(text[x].format(len(secret_word)))
-        
+
     while is_word_guessed(secret_word, letters_guessed) and count > 0:
         guessed_letter = input(text[5])
         if guessed_letter not in letters_guessed:
@@ -65,7 +67,7 @@ def spaceman(secret_word):
     if count > 0:
         print(text[12])
 
-
 if __name__ == '__main__':
+    """Run the program in __name == __main__ format"""
     secret_word = load_word()
     spaceman(secret_word)
